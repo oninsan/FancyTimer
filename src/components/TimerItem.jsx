@@ -20,7 +20,11 @@ const TimerItem = ({
   }, [currentValue, isPaused]);
 
   return (
-    <div className="container border border-5 border-primary rounded w-25 mx-2 my-3">
+    <div
+      className={`container border border-5 border-${
+        currentValue === 0 ? "danger" : "primary"
+      } rounded w-25 mx-2 my-3`}
+    >
       {/* Delete button naten */}
       <p
         style={{ cursor: "pointer" }}

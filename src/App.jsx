@@ -22,37 +22,27 @@ function App() {
 
   const decrementValue = (id) => {
     setTimers((currentTimers) => {
-      return currentTimers.map((timer) => {
-        if (timer.id === id) {
-          return { ...timer, currentValue: timer.currentValue - 1 };
-        } else {
-          return timer;
-        }
-      });
+      return currentTimers.map((timer) =>
+        timer.id === id
+          ? { ...timer, currentValue: timer.currentValue - 1 }
+          : timer
+      );
     });
   };
 
   const togglePausePlay = (id) => {
     setTimers((currentTimers) => {
-      return currentTimers.map((timer) => {
-        if (timer.id === id) {
-          return { ...timer, isPaused: !timer.isPaused };
-        } else {
-          return timer;
-        }
-      });
+      return currentTimers.map((timer) =>
+        timer.id === id ? { ...timer, isPaused: !timer.isPaused } : timer
+      );
     });
   };
 
   const resetTimer = (id) => {
     setTimers((currentTimers) => {
-      return currentTimers.map((timer) => {
-        if (timer.id === id) {
-          return { ...timer, currentValue: timer.time };
-        } else {
-          return timer;
-        }
-      });
+      return currentTimers.map((timer) =>
+        timer.id === id ? { ...timer, currentValue: timer.time } : timer
+      );
     });
   };
 
